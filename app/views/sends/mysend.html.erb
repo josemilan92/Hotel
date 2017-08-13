@@ -1,0 +1,97 @@
+
+
+<section id="banner">
+
+
+  <%= image_tag "/img/secondfloor.jpg" %>
+  <div class="contenedor">
+
+    <p style="color: white">Los mejores Precios</p>
+    <h1 class="titulo" style="color: white;">El refugio</h1>
+
+
+  </div>
+</section>
+
+<p id="notice"><%= notice %></p>
+<h3>Mis reservaciones</h3>
+
+  <% @send.each do |send| %>
+<div class="jumbotron" style="  height:50%;">
+<div class="container">
+      <div class="col-md-3">
+        <div class="page-header">
+          <%=image_tag(send.photo, :class => 'img-responsive', :style=>'width: 70%')  %>
+        </div>
+      </div>
+          <div class="col-md-3">
+            <div class="page-header">
+              <h2>Fecha Inicial</h2>
+          <%= send.fechaPri %>
+            </div>
+          </div>
+      <div class="col-md-3">
+        <div class="page-header">
+          <h2>Fecha Salida</h2>
+          <%= send.fechaUlt %>
+        </div>
+      </div>
+  <div class="col-md-3">
+    <div class="page-header">
+      <h2>Estatus</h2>
+      <%if send.estatus ==1  %>(Reservado)
+      <% else %>
+          (En uso)
+      <%end%>
+    </div>
+  </div>
+      <div class="col-md-3">
+        <div class="page-header">
+          <div class="buttons", style="margin-top:10px; margin-bottom:10px ">
+          </div>
+        </div>
+            <% if user_signed_in? %>
+                <%= link_to 'Cancelar', send, :method=> :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn'  %>
+            <% end %>
+          </div>
+
+        </div>
+      </div>
+      </div>
+  <% end %>
+<% @sendpros.each do |send| %>
+    <div class="jumbotron" style="  height:50%;">
+      <div class="container">
+        <div class="col-md-3">
+          <div class="page-header">
+            <%=image_tag(send.photo, :class => 'img-responsive', :style=>'width: 70%')  %>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="page-header">
+            <h2>Fecha Inicial</h2>
+            <%= send.fechaPri %>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="page-header">
+            <h2>Fecha Salida</h2>
+            <%= send.fechaUlt %>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="page-header">
+            <div class="buttons", style="margin-top:10px; margin-bottom:10px ">
+            </div>
+          </div>
+          <% if user_signed_in? %>
+              <%= link_to 'Cancelar', send, :method=> :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn'  %>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+    </div>
+
+<% end %>
+

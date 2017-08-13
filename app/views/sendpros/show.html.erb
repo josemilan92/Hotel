@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lugar:</strong>
+  <%= @sendpro.lugar %>
+</p>
+
+<p>
+  <strong>Fechapri:</strong>
+  <%= @sendpro.fechaPri %>
+</p>
+
+<p>
+  <strong>Fechault:</strong>
+  <%= @sendpro.fechaUlt %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @sendpro.total %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @sendpro.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_sendpro_path(@sendpro) %> |
+<%= link_to 'Back', sendpros_path %>

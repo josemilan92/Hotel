@@ -1,0 +1,103 @@
+
+
+<p id="notice"><%= notice %></p>
+<section id="banner">
+  <%= image_tag "/img/table.jpg" %>
+  <div class="contenedor">
+
+    <p style="color: white">Los mejores Precios</p>
+    <h1 class="titulo" style="color: white;">El refugio</h1>
+
+
+  </div>
+</section>
+<div class="page-header">
+
+  <div class="form-group">
+    <form>
+      <div id="calendar"></div>
+      <label>Buscar por Categoria</label>
+      <select name="q" onchange="mostrarValor(this.options[this.selectedIndex].innerHTML);" class="form-control">
+        <%  list_categories.each do |c|%>
+            <option name="<%= c.id  %>"  value="<%= c.id %>"><%= c.name  %></option>
+        <% end %>
+      </select>
+      <span class="input-group-btn">
+        <button type=”submit” class="form-control">Buscar</button>
+        <%= link_to 'Refrescar', sends_index_path, :class=>'btn btn form-control' %>
+        </span>
+    </form>
+    <div id="barra-lateral">
+      <h3 style="color: white">Disfrutes de Nuestras Promociones</h3>
+      <%= link_to ad_available, target:'_blank' do %>
+          <%= image_tag ad_available.photo,  width: 230 %>
+          <% end %>
+    </div>
+  </div>
+
+</div>
+
+<%= render 'shared/banner' %>
+<% @hotels.each do |hotel| %>
+    </div>
+
+    <div class="jumbotron"  style="background-color: white">
+      <div class="container"  >
+        <div class="col-md-4">
+          <%=link_to  image_tag(hotel.photo, :class => 'img-responsive', :style =>'height:200px'),hotel %>
+        </div>
+        <div class="col-md-4">
+
+          <div class="page-header">
+            <h3> Nombre:</h3>
+          </div>
+          <h4><%= hotel.nombre %></h4>
+
+
+          <div class="page-header">
+            <h3> Servicio:</h3>
+          </div>
+          <h4><%= hotel.servicio %></h4>
+
+
+
+          <div class="page-header">
+            <h3> Precio:</h3>
+          </div>
+          <h4><%= hotel.price %></h4>
+
+        </div>
+
+
+        <div class="col-md-4">
+          <%= render 'sends/form' %>
+        </div>
+
+
+    </div>
+    </div>
+
+<% end %>
+</div>
+<br>
+
+
+
+
+
+<script type="text/javascript">
+    var elem = document.querySelector('.grid');
+    var msnry = new Masonry( elem, {
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: 200
+    });
+    $(window).load(function(){
+        var elem = document.querySelector('.grid');
+        var msnry = new Masonry( elem, {
+            // options
+            itemSelector: '.grid-item',
+            columnWidth: 200
+        });
+    })
+</script>

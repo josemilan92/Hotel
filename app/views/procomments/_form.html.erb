@@ -1,0 +1,22 @@
+<%= form_for([@promotion, @procomment]) do |f| %>
+    <% if @procomment.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@procomment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+          <ul>
+            <% @procomment.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label  "Comentario" %>
+      <%= f.text_area :texto , :class=>'form-control'%>
+    </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

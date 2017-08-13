@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+<div class="jumbotron " >
+  <div class="container"  >
+
+
+    <div class="row">
+      <div class="col-md-4">
+        <%= month_calendar events: @sends do |date, send| %>
+            <%= date.day %>
+            <% send.each do |meeting| %>
+                <div style="background-color: red">
+                  <%= meeting.lugar %>
+                </div>
+            <% end %>
+        <% end %>
+
+        <div class="page-header">
+        <h3>Nombre:</h3>
+        </div>
+      <h2 class="titulo"> <%= @hotel.nombre %></h2>
+      </div>
+
+      <div class="col-md-8">
+        <%= render 'sends/form' %>
+      </div>
+      <div class="col-md-2">
+        <%= link_to 'Regresar', hotels_path, :class=>'btn' %>
+      </div>
+    </div>
+
+        </div>
+
+    <h3>Comentarios</h3>
+    <%= render "comments/form" %>
+
+      <% @hotel.comments.each do|comment| %>
+          <blockquote>
+            <p><%= comment.texto %></p>
+            <footer><%= comment.created_at %></footer>
+          </blockquote>
+
+      <% end %>
+  </div>
+</div>
+<p>
+
+
+<div class="container">
+  <div class="row">
+
+  </div>
+</div>

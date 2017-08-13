@@ -1,0 +1,2 @@
+module PanoramicaHelper
+end

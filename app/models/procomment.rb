@@ -1,0 +1,2 @@
+class Procomment < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+module SendprosHelper
+end

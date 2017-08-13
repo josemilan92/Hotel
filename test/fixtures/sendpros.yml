@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lugar: MyString
+  fechaPri: 2017-07-25
+  fechaUlt: 2017-07-25
+  total: 1
+  user_id: 1
+
+two:
+  lugar: MyString
+  fechaPri: 2017-07-25
+  fechaUlt: 2017-07-25
+  total: 1
+  user_id: 1

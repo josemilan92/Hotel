@@ -1,0 +1,44 @@
+<%= form_with(model: promotion, local: true) do |form| %>
+  <% if promotion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(promotion.errors.count, "error") %> prohibited this promotion from being saved:</h2>
+
+      <ul>
+      <% promotion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="form-group">
+  <div class="field">
+    <%= form.label :name, "Nombre" %>
+    <%= form.text_field :name, id: :promotion_name,:class=> 'form-control', :placeholder=>"Nombre de la promoción" %>
+  </div>
+    </div>
+    <div class="form-group">
+        <div class="field">
+          <%= form.label :photo, "Foto"%>
+          <%= form.file_field :photo, id: :photo_id %>
+        </div>
+      </div>
+    <div class="form-group">
+  <div class="field">
+    <%= form.label :price, "Precio" %>
+    <%= form.text_field :price, id: :promotion_price, :class=> 'form-control', :placeholder=>"Precio" %>
+  </div>
+    </div>
+    <div class="form-group">
+  <div class="field">
+    <%= form.label :description, "Descripción" %>
+    <%= form.text_area :description, id: :promotion_description,   :class=> 'form-control', :rows =>"10", :cols =>"30", :placeholder=>"Descripción" %>
+  </div>
+    </div>
+    <div class="field">
+      <%= form.label "Categoría" %>
+      <%= form.select :category,  list_categories.collect{|c| [c.name, c.id]}%>
+    </div>
+  <div class="actions">
+    <%= form.submit 'Aceptar', :class=>'btn btn-success' %>
+  </div>
+<% end %>

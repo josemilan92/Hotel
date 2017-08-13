@@ -1,0 +1,52 @@
+<%= form_with(model: hotel, local: true) do |form| %>
+  <% if hotel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hotel.errors.count, "error") %> prohibited this hotel from being saved:</h2>
+
+      <ul>
+      <% hotel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="form-group">
+      <div class="field">
+
+    <%= form.label :nombre, "Nombre" %>
+    <%= form.text_field :nombre, id: :hotel_nombre,  :class=> 'form-control', :placeholder=>"Nombre"%>
+
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="field">
+      <%= form.label "Foto"%>
+      <%= form.file_field :photo, id: :photo_id %>
+      </div>
+    </div>
+    <div class="form-group">
+  <div class="field">
+    <%= form.label :descripcion, "Descripción" %>
+    <%= form.text_area :descripcion, id: :hotel_descripcion ,  :class=> 'form-control', :rows =>"10", :cols =>"30", :placeholder=>"Descripción"%>
+  </div>
+    </div>
+    <div class="form-group">
+      <div class="field">
+        <%= form.label "Precio"%>
+        <%= form.text_field :price, id: :price %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="field">
+        <%= form.label :servicio, "Servicio" %>
+        <%= form.text_area :servicio, id: :servicio ,  :class=> 'form-control', :rows =>"10", :cols =>"30", :placeholder=>"Servicio"%>
+      </div>
+    </div>
+    <div class="field">
+      <%= form.label "Categoría" %>
+      <%= form.select :category,  list_categories.collect{|c| [c.name, c.id]}%>
+    </div>
+  <div class="actions">
+    <%= form.submit "Crear", :class=>'btn btn-primary' %>
+  </div>
+<% end %>

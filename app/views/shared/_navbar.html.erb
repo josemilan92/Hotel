@@ -1,0 +1,54 @@
+<header>
+  <div class="contenedor">
+    <h1 class="icon-bar">El refugio</h1>
+    <input type="checkbox" id="menu-bar">
+    <label class="glyphicon glyphicon-menu-hamburger" for="menu-bar"></label>
+    <div class="menu">
+      <% if user_signed_in? %>
+
+
+          <% if current_user.role== "Maneger"%>
+              <a href="<%= comentarios_path %>" class="glyphicon glyphicon-folder-open" title="Panel"></a>
+              <a href="<%= root_path %>" class="glyphicon glyphicon-home" title="Menú"></a>
+              <a href="<%= hotels_path %>" class="glyphicon glyphicon-bed" title="Habitaciones"></a>
+              <a href="<%= promotions_path %>" class="glyphicon glyphicon-star" title="Promociones de Habitaciones"></a>
+              <a href="<%= maps_index_path %>" class="glyphicon glyphicon-map-marker" title="Lugar"></a>
+              <a href="<%= virtual_prueba_path %>" class="glyphicon glyphicon-thumbs-up" title="Lugares Turisticos" ></a>
+              <a href="<%= mysend_path %>" class="glyphicon glyphicon-shopping-cart" title="Mis reservaciones"></a>
+              <a href="<%= virtual_index_path %>" class="glyphicon glyphicon-picture" title="Galería"></a>
+              <a href="<%= virtual_registro_path %>" class="glyphicon glyphicon-alert" title="Reglamento"></a>
+              <%= link_to  "", destroy_user_session_path, method: :delete, :class=>'glyphicon glyphicon-off' ,:title=>'Logout'%>
+              <a href="<%= edit_user_registration_path %>" class="glyphicon glyphicon-wrench" title="Editar Usuario"></a>
+
+    <% else %>
+              <a href="<%= root_path %>" class="glyphicon glyphicon-home" title="Menú"></a>
+          <a href="<%= hotels_path %>" class="glyphicon glyphicon-bed" title="Habitaciones"></a>
+          <a href="<%= promotions_path %>" class="glyphicon glyphicon-star" title="Promociones de Habitaciones"></a>
+          <a href="<%= maps_index_path %>" class="glyphicon glyphicon-map-marker" title="Lugar"></a>
+          <a href="<%= virtual_prueba_path %>" class="glyphicon glyphicon-thumbs-up" title="Lugares Turisticos" ></a>
+          <a href="<%= mysend_path %>" class="glyphicon glyphicon-shopping-cart" title="Mis reservaciones"></a>
+          <a href="<%= virtual_index_path %>" class="glyphicon glyphicon-picture" title="Galería"></a>
+          <a href="<%= virtual_registro_path %>" class="glyphicon glyphicon-alert" title="Reglamento"></a>
+          <%= link_to  "", destroy_user_session_path, method: :delete, :class=>'glyphicon glyphicon-off' ,:title=>'Logout'%>
+          <a href="<%= edit_user_registration_path %>" class="glyphicon glyphicon-wrench" title="Editar Usuario"></a>
+          <% end %>
+
+
+    <% else %>
+          <a href="<%= root_path %>" class="glyphicon glyphicon-home" title="Menú"></a>
+          <a href="<%= hotels_path %>" class="glyphicon glyphicon-bed" title="Habitaciones"></a>
+          <a href="<%= promotions_path %>" class="glyphicon glyphicon-star" title="Promociones de Habitaciones"></a>
+          <a href="<%= virtual_prueba_path %>" class="glyphicon glyphicon-thumbs-up" title="Lugares Turisticos" ></a>
+          <a href="<%= maps_index_path %>" class="glyphicon glyphicon-map-marker" title="Lugar"></a>
+          <a href="<%= virtual_index_path %>" class="glyphicon glyphicon-picture" title="Galería"></a>
+          <a href="<%= dobles_path %>" class="glyphicon glyphicon-expand" title="Arte"></a>
+          <%= link_to "", new_user_registration_path, :class=>'glyphicon glyphicon-registration-mark', :title=>'Registarse' %>
+          <%= link_to "", new_user_session_path, :class=>'glyphicon glyphicon-user', :title=>'Iniciar Sesión' %>
+      <% end %>
+    </nav>
+
+
+
+  </div>
+  </div>
+</header>

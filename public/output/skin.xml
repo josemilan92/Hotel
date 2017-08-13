@@ -1,0 +1,8 @@
+<skin marginleft="0" marginright="0" margintop="0" marginbottom="0" ><element x="10" y="10" anchor="0" width="179" height="20" id="Loading text" visible="1" alpha="1" angle="0" scalex="1" scaley="1" center="4" handcursor="0" type="text" text="&lt;b&gt;Loading...$p%&lt;/b&gt;" align="0" color="0x000000" bordercolor="0x000000" borderalpha="1" backgroundcolor="0xffffff" backgroundalpha="1" backgroundvisible="0" borderwidth="0" borderradius="0" wordwrap="0" scrollbar="0" autosize="0" >
+<action src="loaded" type="hide" value="" value2="" target="$self" />
+</element>
+<element x="10" y="30" anchor="0" width="180" height="10" id="Loading rectangle" visible="1" alpha="1" angle="0" scalex="1" scaley="1" center="3" handcursor="0" type="rectangle" bordercolor="0x000080" borderalpha="1" backgroundcolor="0x0000ff" backgroundalpha="0.298039" backgroundvisible="1" borderwidth="2" borderradius="0" >
+<action src="loaded" type="hide" value="" value2="" target="$self" />
+<modifier src="loading" type="scalex" offset="0" factor="1" />
+</element>
+</skin>

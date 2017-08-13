@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lugar: MyString
+  fechaPri: 2017-06-27
+  fechaUlt: 2017-06-27
+  promocion: MyString
+
+two:
+  lugar: MyString
+  fechaPri: 2017-06-27
+  fechaUlt: 2017-06-27
+  promocion: MyString

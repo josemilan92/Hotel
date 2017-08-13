@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lugar:</strong>
+  <%= @send.lugar %>
+</p>
+
+<p>
+  <strong>Fechapri:</strong>
+  <%= @send.fechaPri %>
+</p>
+
+<p>
+  <strong>Fechault:</strong>
+  <%= @send.fechaUlt %>
+</p>
+
+<p>
+  <strong>Promocion:</strong>
+  <%= @send.promocion %>
+</p>
+
+<%= link_to 'Edit', edit_send_path(@send) %> |
+<%= link_to 'Back', sends_path %>

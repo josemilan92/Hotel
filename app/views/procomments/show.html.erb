@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Promo:</strong>
+  <%= @procomment.promo_id %>
+</p>
+
+<p>
+  <strong>Texto:</strong>
+  <%= @procomment.texto %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @procomment.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_procomment_path(@procomment) %> |
+<%= link_to 'Back', procomments_path %>

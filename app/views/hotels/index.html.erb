@@ -1,0 +1,132 @@
+<section id="banner">
+  <%= image_tag "/img/table.jpg" %>
+  <div class="contenedor">
+
+    <p style="color: white">Los mejores Precios</p>
+    <h1 class="titulo" style="color: white;">El refugio</h1>
+
+
+  </div>
+</section>
+<input type="checkbox" id="cerrar">
+<label for="cerrar" id="btn-cerrar"></label>
+<div class="modal">
+  <div class="contenido">
+    <h2>Mira nuestras Promociones</h2>
+    <%= link_to ad_available  do %>
+        <%= image_tag ad_available.photo,  width: 230 %>
+    <% end %>
+  </div>
+</div>
+<div class="page-header">
+
+  <div class="form-group">
+    <form>
+      <div id="calendar"></div>
+      <label>Buscar por Categoria</label>
+      <select name="q" onchange="mostrarValor(this.options[this.selectedIndex].innerHTML);" class="form-control">
+        <%  list_categories.each do |c|%>
+            <option name="<%= c.id  %>"  value="<%= c.id %>"><%= c.name  %></option>
+        <% end %>
+      </select>
+      <span class="input-group-btn">
+        <button type=”submit” class="form-control">Buscar</button>
+        <%= link_to 'Refrescar', hotels_path, :class=>'btn btn form-control' %>
+        </span>
+    </form>
+    <div id="barra-lateral">
+      <h3 style="color: white">Disfrutes de Nuestras Promociones</h3>
+      <%= link_to ad_available  do %>
+          <%= image_tag ad_available.photo,  width: 230 %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+<p id="notice"><%= notice %></p>
+<div class="grid">
+
+  <% @hotels.each do |promotion| %>
+
+      </div>
+
+      <div class="jumbotron"  style="background-color: white">
+        <div class="container"  >
+          <div class="col-md-4">
+            <%=link_to  image_tag(promotion.photo, :class => 'img-responsive', :style =>'height:200px'),promotion %>
+          </div>
+          <div class="col-md-4">
+            <div class="page-header">
+              <h2> Nombre:</h2>
+            </div>
+            <h3><%= promotion.nombre %></h3>
+
+          </div>
+          <div class="col-md-4">
+            <div class="page-header">
+              <h2> Servicio:</h2>
+            </div>
+            <h3><%= promotion.descripcion %></h3>
+
+          </div>
+          <div class="col-md-4">
+            <div class="page-header">
+              <h2> Precio:</h2>
+            </div>
+            <h3><%= promotion.price %></h3>
+
+          </div>
+
+
+          <div class="col-md-4">
+
+            <%= link_to 'Reservar', promotion, :class=>'btn' %>
+          </div>
+
+        </div>
+
+      </div>
+      </div>
+
+  <% end %>
+  <br>
+
+  </div>
+
+
+
+
+  <script type="text/javascript">
+      var elem = document.querySelector('.grid');
+      var msnry = new Masonry( elem, {
+          // options
+          itemSelector: '.grid-item',
+          columnWidth: 200
+      });
+      $(window).load(function(){
+          var elem = document.querySelector('.grid');
+          var msnry = new Masonry( elem, {
+              // options
+              itemSelector: '.grid-item',
+              columnWidth: 200
+          });
+      })
+  </script>
+
+<script type="text/javascript">
+    var elem = document.querySelector('.grid');
+    var msnry = new Masonry( elem, {
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: 200
+    });
+    $(window).load(function(){
+        var elem = document.querySelector('.grid');
+        var msnry = new Masonry( elem, {
+            // options
+            itemSelector: '.grid-item',
+            columnWidth: 200
+        });
+    })
+</script>
+

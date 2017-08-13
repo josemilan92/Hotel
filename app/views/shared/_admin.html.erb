@@ -1,0 +1,19 @@
+<header>
+  <div class="contenedor">
+    <h1 class="icon-bar">El refugio</h1>
+    <input type="checkbox" id="menu-bar">
+    <label class="glyphicon glyphicon-menu-hamburger" for="menu-bar"></label>
+    <div class="menu ">
+      <% if user_signed_in? %>
+          <a href="<%= root_path %>" class="glyphicon glyphicon-home" title="Menú"></a>
+          <a href="<%= comentarios_path %>" class="glyphicon glyphicon-folder-open" title="Panel"></a>
+          <%= link_to  "", destroy_user_session_path, method: :delete, :class=>'glyphicon glyphicon-off' ,:title=>'Logout'%>
+          <a href="<%= edit_user_registration_path %>" class="glyphicon glyphicon-wrench" title="Editar Usuario"></a>
+      <% end %>
+      </nav>
+
+
+
+    </div>
+  </div>
+</header>
