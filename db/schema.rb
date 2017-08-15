@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170813191518) do
+ActiveRecord::Schema.define(version: 20170814231614) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20170813191518) do
     t.datetime "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
   end
 
   create_table "pagos", force: :cascade do |t|
@@ -142,6 +143,8 @@ ActiveRecord::Schema.define(version: 20170813191518) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "role", default: "Seller"
+    t.string "name"
+    t.string "phone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

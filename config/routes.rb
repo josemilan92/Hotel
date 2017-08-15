@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   #resources :comments
   devise_for :users
-  devise_for :admins
+  #devise_for :admins
   resources :sends
 
 
@@ -53,6 +53,8 @@ Rails.application.routes.draw do
   get 'jose' =>'maps#jose'
 
   get 'dobles' =>'procomments#doble'
+
+  get 'artistas' =>'procomments#artista'
 
   get 'mysend'=> 'sends#mysend'
 

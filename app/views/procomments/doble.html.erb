@@ -22,8 +22,6 @@
 <body>
 <div id="container"></div>
 <script type="text/javascript" src="js/awe-loader-min.js"></script>
-<script type="text/javascript" src="underscore-min.js"></script>
-<script type="text/javascript" src="arcontroller.js"></script>
 <script type="text/javascript">
     window.addEventListener('load', function() {
         window.awe.init({
@@ -47,80 +45,20 @@
                             [ 'js/awe-standard-dependencies.js', 'js/awe-standard.js'],
                             'awe-jsartoolkit-dependencies.js',
                             'awe.marker_ar.js',
-                            'awe-standard-window_resized.js',
-                            'awe-standard-object_clicked.js',
                         ],
                         success: function() {
                             awe.setup_scene();
                             awe.pois.add({id:'poi_1', position: { x:0, y:0, z:10000 }, visible: false });
                             //awe.pois.add({id: 'projection', position: { x:200, y:0, z:200 } });
                             awe.projections.add({
-                                id: 'projection_1',
-                                geometry: {shape: 'plane', height: 400, width: 400},
+                                id:'projection_1',
+                                geometry: {shape: 'plane', height: 200, width: 200},
                                 //geometry: { shape: 'cube', x: 220, y: 230, z: 250},
-                                material: {type: 'phong', color: 0xFFFFFF},
-                                //texture: { path: 'oferta.png' },
-                               // rotation: {x: 90 , z:45},
-                                //animation: { duration: 1}
-                                position: {x: 0, y: 0, z: 0}
-
+                                material:{ type: 'phong', color: 0xFFFFFF },
+                                texture: { path: 'DOLORES.mp4' },
+                                rotation: { x: -90}
+                                //animation: { duration: 1},
                             }, { poi_id: 'poi_1' });
-                            awe.projections.add({
-                                id: 'ar_button_one',
-                                geometry: {shape: 'cube', x: 60, y: 30, z: 5},
-                                rotation: {y: 45},
-                                position: {x: -5, y: -31, z: -5},
-                                material: {type: 'phong', color: 0xFF0000
-                                }
-                            }, {poi_id: 'poi_1'});
-                            awe.projections.add({
-                                id: 'ar_button_two',
-                                geometry: {shape: 'cube', x: 60, y: 30, z: 5},
-                                rotation: {y: 45},
-                                position: {x: -5, y: -31, z: -5},
-                                material: {
-                                    type: 'phong', color: 0xFF6600
-                                }
-                            }, {poi_id: 'poi_1'});
-                            awe.projections.add({
-                                id: 'ar_button_three',
-                                geometry: {shape: 'cube', x: 110, y: 30, z: 5},
-                                rotation: {y: 45},
-                                position: {x: -5, y: -31, z: -5},
-                                material: {type: 'phong', color: 0xFFFF00
-                                }
-                            }, {poi_id: 'poi_1'});
-                            awe.projections.add({
-                                id: 'ar_button_four',
-                                geometry: {shape: 'cube', x: 150, y: 30, z: 5},
-                                rotation: {y: 45},
-                                position: {x: -5, y: -31, z: -5},
-                                material: {type: 'phong', color: 0xFFFFFF}
-                            }, {poi_id: 'poi_1'});
-                            awe.projections.add({
-                                id: 'ar_button_five',
-                                geometry: {shape: 'cube', x: 180, y: 30, z: 5},
-                                rotation: {y: 45},
-                                position: {x: -5, y: -31, z: -5},
-                                material: {type: 'phong', color: 0x00FF00}
-                            }, {poi_id: 'poi_1'});
-                            awe.projections.add({
-                                id: 'ar_button_six',
-                                geometry: {shape: 'cube', x: 150, y: 30, z: 5},
-                                rotation: {y: 45},
-                                position: {x: -5, y: -31, z: -5},
-                                material: {type: 'phong', color: 0x0080FF}
-                            }, {poi_id: 'poi_1'});
-
-                            awe.projections.add({
-                                id: 'ar_button_seven',
-                                geometry: {shape: 'cube', x: 100, y: 30, z: 5},
-                                rotation: {y: 45},
-                                position: {x: -5, y: -31, z: -5},
-                                material: {type: 'phong', color: 0x8000FF}
-                            }, {poi_id: 'poi_1'});
-
-
 
                             /* awe.projections.add({
                                  id: 'projection',
@@ -156,24 +94,6 @@
                                                     id: 'poi_1'
                                                 }
                                             });
-                                            awe.projections.update({
-                                                data: {
-                                                    visible: true
-                                                },
-                                                where: {
-                                                    id: 'projection_1'
-                                                }
-                                            });
-                                        }
-                                        else if (menu_open) {
-                                            awe.projections.update({
-                                                data: {
-                                                    visible: false
-                                                },
-                                                where: {
-                                                    id: 'projection_1'
-                                                }
-                                            });
                                         }
                                         else {
                                             awe.pois.update({
@@ -188,190 +108,10 @@
                                         awe.scene_needs_rendering = 1;
                                     }
                                 }
-                            }]);
-                            window.addEventListener('object_clicked', function(e) {
-                                switch (e.detail.projection_id) {
-                                    case 'projection_1':
-                                        if (!menu_open) {
-                                            awe.projections.update({
-                                                data: {
-                                                    animation: {
-                                                        duration: 1
-                                                    },
-                                                    position: {y: 35}
-                                                },
-                                                where: {id: 'ar_button_one'}
-                                            });
-                                            awe.projections.update({
-                                                data: {
-                                                    animation: {
-                                                        duration: 1
-                                                    },
-                                                    position: {y: 70}
-                                                },
-                                                where: {id: 'ar_button_two'}
-                                            });
-                                            awe.projections.update({
-                                                data: {
-                                                    animation: {
-                                                        duration: 1
-                                                    },
-                                                    position: {y: 105}
-                                                },
-                                                where: {id: 'ar_button_three'}
-                                            });
-                                            awe.projections.update({
-                                                data: {
-                                                    animation: {
-                                                        duration: 1
-                                                    },
-                                                    position: {y: 140}
-                                                },
-                                                where: {id: 'ar_button_four'}
-                                            });
-                                            awe.projections.update({
-                                                data: {
-                                                    animation: {
-                                                        duration: 1
-                                                    },
-                                                    position: {y: 175}
-                                                },
-                                                where: {id: 'ar_button_five'}
-                                            });
-                                            awe.projections.update({
-                                                data: {
-                                                    animation: {
-                                                        duration: 1
-                                                    },
-                                                    position: {y: 210}
-                                                },
-                                                where: {id: 'ar_button_six'}
-                                            });
-                                            awe.projections.update({
-                                                data: {
-                                                    animation: {
-                                                        duration: 1
-                                                    },
-                                                    position: {y: 245}
-                                                },
-                                                where: {id: 'ar_button_seven'}
-                                            });
-                                        } else {
-                                            awe.projections.update({
-                                                data: {
-                                                    animation: {
-                                                        duration: 1
-                                                    },
-                                                    position: {y: -31}
-                                                },
-                                                where: {id: 'ar_button_one'}
-                                            });
-                                            awe.projections.update({
-                                                data: {
-                                                    animation: {
-                                                        duration: 1
-                                                    },
-                                                    position: {y: -31}
-                                                },
-                                                where: {id: 'ar_button_two'}
-                                            });
-                                            awe.projections.update({
-                                                data: {
-                                                    animation: {
-                                                        duration: 1
-                                                    },
-                                                    position: {y: -31}
-                                                },
-                                                where: {id: 'ar_button_three'}
-                                            });
-                                            awe.projections.update({
-                                                data: {
-                                                    animation: {
-                                                        duration: 1
-                                                    },
-                                                    position: {y: -31}
-                                                },
-                                                where: {id: 'ar_button_four'}
-                                            });
-                                            awe.projections.update({
-                                                data: {
-                                                    animation: {
-                                                        duration: 1
-                                                    },
-                                                    position: {y: -31}
-                                                },
-                                                where: {id: 'ar_button_five'}
-                                            });
-                                            awe.projections.update({
-                                                data: {
-                                                    animation: {
-                                                        duration: 1
-                                                    },
-                                                    position: {y: -31}
-                                                },
-                                                where: {id: 'ar_button_six'}
-                                            });
-                                            awe.projections.update({
-
-                                                data: {
-
-                                                    animation: {
-
-                                                        duration: 1
-
-                                                    },
-
-                                                    position: {y: -31}
-
-                                                },
-
-                                                where: {id: 'ar_button_seven'}
-
-                                            });
-
-                                        }
-
-
-
-                                        menu_open = !menu_open;
-
-                                        break;
-
-                                    case 'ar_button_one':
-
-                                    case 'ar_button_two':
-
-                                    case 'ar_button_three':
-
-                                    case 'ar_button_four':
-
-                                    case 'ar_button_five':
-
-                                    case 'ar_button_six':
-
-                                    case 'ar_button_seven':
-                                        var request = new XMLHttpRequest();
-                                        request.open('GET', 'http://maker.ifttt.com/trigger/'+e.detail.projection_id+'/with/key/yourkeyhere', true);
-                                        request.onload = function() {
-                                            if (request.status >= 200 && request.status < 400) {
-                                                var data = JSON.parse(request.responseText);
-                                                console.log(data);
-                                            }
-                                        };
-
-
-
-                                        request.send();
-
-                                        break;
-
-                                }
-
-                            }, false);
-                            // success()
-
-                        }
+                            }])
+                        },
                     },
+
                     {
                         capabilities: [],
                         success: function() {

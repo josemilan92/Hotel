@@ -5,7 +5,8 @@
     <%= f.input :name %>
     <%= f.input :start_time %>
     <%= f.input :end_time %>
-  </div>
+    <%= f.file_field :photo, id: :photo_id %>
+      </div>
 
   <div class="form-actions">
     <%= f.button :submit %>

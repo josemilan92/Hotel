@@ -1,6 +1,13 @@
 class ProcommentsController < ApplicationController
   before_action :set_procomment, only: [:show, :edit, :update, :destroy]
 
+  layout 'virtual'
+  def artista
+  end
+  def artista1
+  end
+  def artista2
+  end
   def doble
   end
   def new
