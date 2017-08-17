@@ -36,8 +36,8 @@ class SendprosController < ApplicationController
   def create
     @hotels= Hotel.all
     @promotions = Promotion.all
-    @sendpro.user_id=current_user.id
     @sendpro = Sendpro.new(sendpro_params)
+    @sendpro.user_id=current_user.id
       if @sendpro.save
         redirect_to mysend_url, notice: 'Habitación Guardada'
       else

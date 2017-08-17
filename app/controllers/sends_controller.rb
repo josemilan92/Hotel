@@ -52,8 +52,8 @@ class SendsController < ApplicationController
     #@hotels= Hotel.all
     #@send.hotel = @hotel
     @promotions = Promotion.all
-    @send.user_id=current_user.id
     @send = Send.new(send_params)
+    @send.user_id=current_user.id
       if @send.save
        redirect_to mysend_url, notice: 'Habitación Guardada'
        else
