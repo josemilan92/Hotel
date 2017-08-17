@@ -21,7 +21,7 @@
 <div class="container">
       <div class="col-md-3">
         <div class="page-header">
-          <%=image_tag(send.photo, :class => 'img-responsive', :style=>'width: 70%')  %>
+          <%=image_tag(send.photo, :class => 'img-responsive', :style=>'width: 70%') unless send.photo.blank?  %>
         </div>
       </div>
           <div class="col-md-3">
@@ -64,7 +64,7 @@
       <div class="container">
         <div class="col-md-3">
           <div class="page-header">
-            <%=image_tag(send.photo, :class => 'img-responsive', :style=>'width: 70%')  %>
+            <%=image_tag(send.photo, :class => 'img-responsive', :style=>'width: 70%') unless send.photo.blank?  %>
           </div>
         </div>
         <div class="col-md-3">
