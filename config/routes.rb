@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   resources :sends
 
 
+
+
   get 'login/index'
 
   get 'login/show'
@@ -53,6 +55,12 @@ Rails.application.routes.draw do
   get 'jose' =>'maps#jose'
 
   get 'dobles' =>'procomments#doble'
+
+  get 'nieves' =>'procomments#dolo'
+
+  get 'dolores' =>'procomments#dolores'
+
+ get 'talavera' =>'procomments#talavera'
 
   get 'artistas' =>'procomments#artista'
 

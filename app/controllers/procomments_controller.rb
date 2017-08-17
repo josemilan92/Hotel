@@ -4,9 +4,11 @@ class ProcommentsController < ApplicationController
   layout 'virtual'
   def artista
   end
-  def artista1
+  def nieves
   end
-  def artista2
+  def dolores
+  end
+  def talavera
   end
   def doble
   end
