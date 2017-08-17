@@ -94,7 +94,7 @@ class SendsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def send_params
-      params.require(:send).permit(:lugar,:pago, :total, :estatus, :photo, :start_time, :end_time, :hotel_id)
+      params.require(:send).permit(:lugar, :pago, :total, :estatus, :photo, :start_time, :end_time, :hotel_id)
     end
 
   #def invalid_send
