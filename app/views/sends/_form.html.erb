@@ -1,5 +1,5 @@
 
-    <%= simple_form_for([@hotel,@send]) do |form| %>
+    <%= form_for([@hotel,@send]) do |form| %>
         <% if @send.errors.any? %>
             <div id="error_explanation">
               <h2><%= pluralize(@send.errors.count, "error") %> prohibited this comment from being saved:</h2>
@@ -16,7 +16,25 @@
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
           <div class="well">
+    <div class="form-group">
+  <div class="field">
 
+    <%= form.hidden_field  :total, value:@hotel.price %>
+ <%= form.hidden_field  :lugar, value:@hotel.nombre %>
+    <%= form.hidden_field  :photo, value:@hotel.photo%>
+  </div>
+    </div>
+
+
+    <div class="form-group">
+      <div class="field">
+
+        <%= form.hidden_field  :estatus, value:1%>
+        <%= form.hidden_field  :hotel_id, value:@hotel.id%>
+
+
+      </div>
+    </div>
             <div class="field">
               <%= form.label  'Fecha Inicial'%>
               <%= form.input :start_time, id: :send_start_time, :class=>'form-control' , :start_year => 2017, :discard_hours=>true%>

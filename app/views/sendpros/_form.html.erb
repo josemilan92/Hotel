@@ -1,5 +1,5 @@
 
-<%= simple_form_for([@promotion, @sendpro]) do |f| %>
+<%= form_for([@promotion, @sendpro]) do |f| %>
     <% if @sendpro.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@sendpro.errors.count, "error") %> prohibited this comment from being saved:</h2>
