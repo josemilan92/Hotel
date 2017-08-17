@@ -7,4 +7,5 @@ class Sendpro < ApplicationRecord
   attr_accessor :status
   attr_accessor :hotel_id
   attr_accessor :pago
+  has_many :promotions
 end
