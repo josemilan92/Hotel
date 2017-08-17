@@ -40,12 +40,12 @@
         <div class="form-group">
           <div class="field">
             <%= f.label  'Fecha Inicial'%>
-            <%= f.input :start_time, id: :send_start_time, :class=>'form-control' , :start_year => 2017, :discard_hours=>true%>
+            <%= f.date_select :start_time, id: :send_start_time, :class=>'form-control' , :start_year => 2017, :discard_hours=>true%>
 
           </div>
           <div class="field">
             <%= f.label  'Fecha Salida'%>
-            <%= f.input :end_time, id: :send_end_time, :class=>'form-control' , :start_year => 2017, :discard_hours=>true%>
+            <%= f.date_select :end_time, id: :send_end_time, :class=>'form-control' , :start_year => 2017, :discard_hours=>true%>
 
           </div>
         <div class="field">
