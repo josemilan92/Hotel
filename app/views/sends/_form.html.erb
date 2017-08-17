@@ -37,12 +37,12 @@
     </div>
             <div class="field">
               <%= form.label  'Fecha Inicial'%>
-              <%= form.input :start_time, id: :send_start_time, :class=>'form-control' , :start_year => 2017, :discard_hours=>true%>
+              <%= form.date_select :start_time, id: :send_start_time, :class=>'form-control' , :start_year => 2017, :discard_hours=>true%>
 
             </div>
             <div class="field">
               <%= form.label  'Fecha Salida'%>
-              <%= form.input :end_time, id: :send_end_time, :class=>'form-control' , :start_year => 2017, :discard_hours=>true%>
+              <%= form.date_select :end_time, id: :send_end_time, :class=>'form-control' , :start_year => 2017, :discard_hours=>true%>
 
             </div>
 
