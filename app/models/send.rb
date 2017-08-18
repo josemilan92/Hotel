@@ -1,10 +1,10 @@
 class Send < ApplicationRecord
   has_many :hotels
-  validates :photo, presence:true
-  validates :lugar, presence:true
-  validates :pago, presence:true
-  validates :total, presence:true
-  validates :status, presence:true
+  has_one :photo
+  has_one :lugar
+  has_one :pago
+  has_one :total
+  has_one :status
   validates :start_time, uniqueness: { scope: :lugar , notice: "Fecha Ya utilizada" }
   validates :end_time, uniqueness: { scope: :lugar, notice:"Fecha no valida"}
 
