@@ -9,7 +9,14 @@
             <%= date.day %>
             <% send.each do |meeting| %>
                 <div style="background-color: red">
-                  <%= meeting.lugar %>
+                  <%if meeting.estatus==1 %>
+                  Reservado
+                  <%end%>
+                </div>
+                <div style="background-color: green">
+                  <% if meeting.estatus==2 %>
+                      En uso
+                  <% end %>
                 </div>
             <% end %>
         <% end %>

@@ -47,7 +47,6 @@ class SendsController < ApplicationController
   # POST /sends
   # POST /sends.json
   def create
-
     #@hotels = Hotel.all
     #@hotels= Hotel.all
     #@send.hotel = @hotel

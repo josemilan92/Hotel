@@ -27,15 +27,23 @@
           <div class="col-md-3">
             <div class="page-header">
               <h2>Fecha Inicial</h2>
-          <%= send.fechaPri %>
+          <%= send.start_time %>
             </div>
           </div>
       <div class="col-md-3">
         <div class="page-header">
           <h2>Fecha Salida</h2>
-          <%= send.fechaUlt %>
+          <%= send.end_time %>
         </div>
       </div>
+  <div class="col-md-3">
+    <div class="page-header">
+     <%if send.estatus ==1  %>(Reservado)
+      <% else %>
+          (En uso)
+      <%end%>
+      </div>
+  </div>
       <div class="col-md-3">
         <div class="page-header">
           <div class="buttons", style="margin-top:10px; margin-bottom:10px ">
@@ -61,13 +69,13 @@
         <div class="col-md-3">
           <div class="page-header">
             <h2>Fecha Inicial</h2>
-            <%= send.fechaPri %>
+            <%= send.start_time %>
           </div>
         </div>
         <div class="col-md-3">
           <div class="page-header">
             <h2>Fecha Salida</h2>
-            <%= send.fechaUlt %>
+            <%= send.end_time %>
           </div>
         </div>
         <div class="col-md-3">
