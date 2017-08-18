@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="222f659c-89c4-4e92-9b99-1b74da55ba45" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20170818085247_add_to_send_pro.rb" afterPath="$PROJECT_DIR$/db/migrate/20170818085247_add_to_send_pro.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -925,12 +924,12 @@
       <workItem from="1503006412048" duration="12042000" />
       <workItem from="1503022290127" duration="10160000" />
       <workItem from="1503038079659" duration="3451000" />
-      <workItem from="1503044277100" duration="2262000" />
+      <workItem from="1503044277100" duration="2409000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="466694000" />
+    <option name="totallyTimeSpent" value="466841000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
