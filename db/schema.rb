@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170817224300) do
+ActiveRecord::Schema.define(version: 20170818043124) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 20170817224300) do
     t.float "price"
     t.string "servicio"
     t.string "category"
-    t.string "status"
   end
 
   create_table "meetings", force: :cascade do |t|
@@ -96,7 +95,6 @@ ActiveRecord::Schema.define(version: 20170817224300) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "category"
-    t.string "status"
   end
 
   create_table "sendpros", force: :cascade do |t|
@@ -116,11 +114,9 @@ ActiveRecord::Schema.define(version: 20170817224300) do
   end
 
   create_table "sends", force: :cascade do |t|
-    t.string "lugar"
     t.string "pago"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "total"
     t.integer "estatus"
     t.integer "user_id"
     t.string "photo"

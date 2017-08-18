@@ -36,7 +36,6 @@ class HotelsController < ApplicationController
   # POST /hotels.json
   def create
     @hotel = Hotel.new(hotel_params)
-
     respond_to do |format|
       if @hotel.save
         format.html { redirect_to comentarios_hotel_path, notice: 'Hotel was successfully created.' }
