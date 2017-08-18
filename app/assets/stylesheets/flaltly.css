@@ -437,7 +437,16 @@ footer .contenedor {
     border-radius: 50%;
     border: 7px solid #fff;
 }
+.info-vi {
+    margin: 20px;
+}
 
+.info-vi img {
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    border: 7px solid #fff;
+}
 @media (min-width:480px) {
     .info-pet {
         width: 40%;

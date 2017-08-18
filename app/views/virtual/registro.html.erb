@@ -1,101 +1,28 @@
-<link rel = "stylesheet" type = "text/css" href="12-column-grid-video1-after.css" />
-
-
-
 <body>
 
-<div class="container"><!--everything on the page-->
+<section id="info">
+  <div class="contenedor">
+  <div class="info-vi">
+    <%= image_tag "/img/marcador-64.png" %>
+    <h3>Es necesario la siguiente </h3>
+    <h3>imagen para ver la realidad aumentada</h3>
+    <a type="button" href="marcador-64.png" target="_blank" value="Descargar Imagen" > Descargar Imagen</a>
 
-
-
-
-
-  <div class="row">
-
-    <div class="row3" >
-
-      <div class="six" style="background: url('Dolores_Hidalgo_night.jpg') no-repeat center center fixed;">
-
-      </div><!--closing column 6-->
-
-
-
-      <div class="three" style="background-color: transparent">
-        <h2>Es necesario la siguiente imagen para ver la realidad aumentada</h2>
-        <a type="button" href="marcador-64.png" target="_blank" value="Descargar Imagen" > Descargar Imagen</a>
-<!--      <input type="button" value="Descargar Imagen" target="_blank" onclick="window.location.href='marcador-64.png'" >-->
-
-
-      </div><!--closing column 3-->
-
+  </div>
+  <div class="info-vi">
+    <%= image_tag "/img/Dolores_Hidalgo_night.jpg" %>
+    <h4> <a href="<%= dolores_path %>" > Mas Información</a></h4>
+  </div>
+  <div class="info-vi">
+    <%= image_tag "/img/Parroquia.jpg" %>
+    <h4><a href="<%= talavera_path %>"> Mas Información</a></h4>
+  </div>
+    <div class="info-vi">
+      <%= image_tag "/img/jose.jpg" %>
+      <h4>Somos tu hotel</h4>
     </div>
-
-  </div><!--closing row 3-->
-
-
+  </div>
+</section>
 
 
-
-  <div class="row">
-
-    <div class="row5">
-
-      <div class="three" style="background-color: transparent">
-
-        <a href="<%= dolores_path %>" class="glyphicon glyphicon-map-marker" title="Lugar"> Mas Información</a>
-      </div><!--closing column 3-->
-
-
-
-      <div class="three" style="background: url('talavera.jpg') no-repeat center center fixed;">
-
-      </div><!--closing column 3-->
-
-
-
-      <div class="three"  style="background: url(talavera.jpg) no-repeat center center fixed;">
-
-      </div><!--closing column 3-->
-
-
-
-      <div class="three" style="background-color: transparent" >
-
-      </div><!--closing column 3-->
-
-    </div>
-
-  </div><!--closing row 5-->
-
-
-
-
-
-  <div class="row">
-
-    <div class="row6">
-
-      <div class="three" style="background-color: transparent">
-
-      </div><!--closing column 6-->
-
-
-
-      <div class="six"  style="background: url('Parroquia.jpg') no-repeat center center fixed;">
-
-      </div><!--closing column 3-->
-
-
-
-      <div class="three" style="background-color: transparent">
-
-        <a href="<%= talavera_path %>" class="glyphicon glyphicon-map-marker" title="Lugar"> Mas Información</a>
-      </div><!--closing column 3-->
-
-    </div>
-
-  </div><!--closing row 6-->
-
-
-</div><!--closing container div-->
-
+</body>
