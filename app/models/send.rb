@@ -9,6 +9,6 @@ class Send < ApplicationRecord
 
 
 
-  attr_accessible     :lugar, :pago, :total, :estatus, :user_id, :photo, :hotel_id
+  attr_accessor     :lugar, :pago, :total, :estatus, :user_id, :photo, :hotel_id
 
 end
