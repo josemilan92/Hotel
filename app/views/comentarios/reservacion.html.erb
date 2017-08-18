@@ -15,12 +15,12 @@
   <tbody>
   <% @sends.each do |post| %>
       <tr>
-        <td><%= post.lugar %></td>
+        <td><%= post.hotel_id %></td>
         <td> <%if post.estatus ==1  %>(Reservado)
           <% else %>
           (En uso)
           <%end%></td>
-        <td><%= post.total %></td>
+
         <td><%= link_to 'Editar', edit_send_path(post), class:'btn btn-default' %></td>
         <td><%= link_to 'Eliminar', post, method: :delete, data: { confirm: 'Are you sure?' } , class:'btn btn-default'%></td>
       </tr>
