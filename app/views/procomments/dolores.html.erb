@@ -48,27 +48,13 @@
                         ],
                         success: function() {
                             awe.setup_scene();
-                            awe.pois.add({id:'poi_1', position: { x:0, y:0, z:10000 }, visible: false });
-                            //awe.pois.add({id: 'projection', position: { x:200, y:0, z:200 } });
+                            awe.pois.add({ id:'poi_1', position: { x:0, y:0, z:10000 }, visible: false });
                             awe.projections.add({
                                 id:'projection_1',
-                                geometry: {shape: 'plane', height: 200, width: 200},
-                                //geometry: { shape: 'cube', x: 220, y: 230, z: 250},
+                                geometry: { shape: 'cube', x:120, y:120, z:120 },
                                 material:{ type: 'phong', color: 0xFFFFFF },
-                                texture: { path: 'DOLORESHID.mp4' },
-                                rotation: { x: -90}
-                                //animation: { duration: 1},
+                                texture: { path: 'awe_by_buildAR.png' },
                             }, { poi_id: 'poi_1' });
-
-                          /* awe.projections.add({
-                           id: 'projection',
-                           geometry:{shape:'cube', x:50, y:50, z:50},
-                           material:{type: 'phong', colo: 0xFF0000},
-                           texture: { path: 'bed.jpg' },
-
-                           },
-                           {poi_id: 'north'});
-                           */
                             awe.events.add([{
                                 id: 'ar_tracking_marker',
                                 device_types: {
@@ -111,7 +97,6 @@
                             }])
                         },
                     },
-
                     {
                         capabilities: [],
                         success: function() {
