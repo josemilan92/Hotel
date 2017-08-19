@@ -17,8 +17,10 @@
       <tr>
         <td><%= post.hotel_id %></td>
         <td> <%if post.estatus ==1  %>(Reservado)
-          <% else %>
-          (En uso)
+          <%end%>
+          <%if post.estatus ==2  %>(En Uso)
+          <%end%>
+          <%if post.estatus ==3  %>(Finalizado)
           <%end%></td>
 
         <td><%= link_to 'Editar', edit_send_path(post), class:'btn btn-default' %></td>

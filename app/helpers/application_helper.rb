@@ -1,5 +1,8 @@
 module ApplicationHelper
 
+  def list_user
+    @users=User.all
+  end
   def list_categories
     @categories = Category.all
   end
