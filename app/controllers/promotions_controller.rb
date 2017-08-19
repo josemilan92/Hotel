@@ -6,9 +6,9 @@ class PromotionsController < ApplicationController
   def index
     @q = params[:q]
     if @q
-      @promotions = Promotion.where(:category => @q)
+      @promotions = Promotion.where(:category => @q).page(params[:page]).per(3)
     else
-      @promotions = Promotion.all
+      @promotions = Promotion.all.page(params[:page]).per(3)
     end
     # @promotions = Promotion.all
   end

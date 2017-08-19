@@ -303,6 +303,7 @@ DEPENDENCIES
   foundation-rails
   fullcalendar-rails
   jbuilder (~> 2.5)
+  kaminari
   momentjs-rails
   pg
   puma (~> 3.7)

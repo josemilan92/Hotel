@@ -7,9 +7,9 @@ class HotelsController < ApplicationController
   def index
     @q = params[:q]
     if @q
-      @hotels = Hotel.where(:category => @q)
+      @hotels = Hotel.where(:category => @q).page(params[:page]).per(2)
     else
-      @hotels = Hotel.all
+      @hotels = Hotel.all.page(params[:page]).per(3)
     end
     @send = Send.all
    # @hotels = Hotel.all

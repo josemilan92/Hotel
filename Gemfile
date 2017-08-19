@@ -76,6 +76,8 @@ gem 'fullcalendar-rails'
 
 gem 'momentjs-rails'
 
+gem 'kaminari'
+
 gem 'cancan'
 
 gem 'activeadmin'
