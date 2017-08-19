@@ -19,11 +19,13 @@ class ComentariosController < ApplicationController
     @q = params[:q]
     if @q
       @sends = Send.where(:user_id => @q)
+      @sendpros = Sendpro.where(:user_id => @q)
     else
       @sends = Send.all
+      @sendpros = Sendpro.all
     end
 
-    @sendpros = Sendpro.all
+
   end
 
 end
