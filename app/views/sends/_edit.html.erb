@@ -31,11 +31,12 @@
             </div>
             <div class="form-group">
               <div class="field">
+                <%= form.label "Habitación" %>
                 <%= form.select :hotel_id,  value: list_hotels.collect{|c| [c.nombre, c.id]}%>
               </div>
             </div>
             <div class="field">
-              <%= form.label "Tipo de pago" %>
+              <%= form.label "Estado de reservación" %>
               <%= form.select :estatus,  value: list_estado.collect{|c| [c.nombre, c.id]}%>
             </div>
 
