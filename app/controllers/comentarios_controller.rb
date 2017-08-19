@@ -16,8 +16,14 @@ class ComentariosController < ApplicationController
   end
 
   def reservacion
+    @q = params[:q]
+    if @q
+      @sends = Send.where(:user_id => @q)
+    else
+      @sends = Send.all
+    end
+
     @sendpros = Sendpro.all
-    @sends = Send.all
   end
 
 end
