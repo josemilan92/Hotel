@@ -70,6 +70,8 @@ gem 'bootstrap-sass'
 
 gem 'foundation-rails'
 
+gem 'twitter-bootstrap-rails'
+
 gem 'fullcalendar-rails'
 
 gem 'momentjs-rails'
