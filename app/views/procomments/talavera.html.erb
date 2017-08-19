@@ -49,26 +49,51 @@
                         success: function() {
                             awe.setup_scene();
                             awe.pois.add({id:'poi_1', position: { x:0, y:0, z:10000 }, visible: false });
-                            //awe.pois.add({id: 'projection', position: { x:200, y:0, z:200 } });
+
                             awe.projections.add({
                                 id:'projection_1',
+                                //geometry: {shape: 'torusknot', x:200, y:200 , radius:60},
+                                //geometry: {shape: 'torus', x:200, y:200 , radius:60},
+                                //geometry: {shape: 'tetrahedron', x:200, y:200 , radius:60},
+                                //geometry: {shape: 'text', text:{parameters:"Hola"}},
                                 geometry: {shape: 'plane', height: 200, width: 200},
                                 //geometry: { shape: 'cube', x: 220, y: 230, z: 250},
                                 material:{ type: 'phong', color: 0xFFFFFF },
-                                texture: { path: 'Turismo.mp4' },
+                                texture: { path: 'frame 19.png' },
+                                position: {x: -5, y: -31, z: -5},
                                 rotation: { x: -90}
                                 //animation: { duration: 1},
                             }, { poi_id: 'poi_1' });
-
-                          /* awe.projections.add({
+                          awe.projections.add({
                            id: 'projection',
-                           geometry:{shape:'cube', x:50, y:50, z:50},
-                           material:{type: 'phong', colo: 0xFF0000},
-                           texture: { path: 'bed.jpg' },
-
+                           geometry:{shape:'cube', x:180, y:180, z:10},
+                           material:{type: 'phong', color:0xFFFFFF},
+                                  position: {x: -5, y: -31, z: -5},
+                                  texture: { path: 'Turismo.mp4' },
+                                  rotation: { x: -90}
                            },
-                           {poi_id: 'north'});
-                           */
+                           {poi_id: 'poi_1'});
+                            awe.projections.add({
+                                    id: 'projection_2',
+                                    geometry: {shape: 'cylinder',height:200},
+                                    //geometry:{shape:'cube', x:200, y:200, z:10},
+                                    position: {x: -100, y: 50, z: 10},
+                                    material:{type: 'phong', color:0xFFFFFF},
+                                    texture: { path: 'column.jpg' },
+                                    rotation: { x: -90}
+                                },
+                                {poi_id: 'poi_1'});
+                            awe.projections.add({
+                                    id: 'projection_3',
+                                    geometry: {shape: 'cylinder',height:200},
+                                    //geometry:{shape:'cube', x:200, y:200, z:10},
+                                    position: {x: 100, y: 50, z: 10},
+                                    material:{type: 'phong', color:0xFFFFFF},
+                                    texture: { path: 'column.jpg' },
+                                    rotation: { x: -90}
+                                },
+                                {poi_id: 'poi_1'});
+
                             awe.events.add([{
                                 id: 'ar_tracking_marker',
                                 device_types: {
