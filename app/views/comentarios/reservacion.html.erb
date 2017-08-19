@@ -31,7 +31,7 @@
       <tr>
         <td><%= post.start_time %></td>
         <td><%= post.end_time %></td>
-        <td><%= image_tag post.photo, :width=>'100'%></td>
+        <td><%= post.hotel_id %></td>
         <td> <%if post.estatus ==1  %>(Reservado)
           <%end%>
           <%if post.estatus ==2  %>(En Uso)
@@ -69,7 +69,7 @@
       <tr>
         <td><%= post.start_time %></td>
         <td><%= post.end_time %></td>
-        <td><%= image_tag post.photo, :width=>'100'%></td>
+        <td><%= post.lugar %></td>
         <td><%= post.pago %></td>
         <td><%= post.total %></td>
         <td><%= link_to 'Editar', edit_sendpro_path(post), class:'btn btn-default' %></td>
