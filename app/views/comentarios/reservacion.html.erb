@@ -57,7 +57,7 @@
   <tr>
     <th>Fecha inicial</th>
     <th>Fecha salida</th>
-    <th>Lugar</th>
+    <th>Foto</th>
     <th>Pago</th>
     <th>Total</th>
     <th colspan="3"></th>
@@ -69,7 +69,7 @@
       <tr>
         <td><%= post.start_time %></td>
         <td><%= post.end_time %></td>
-        <td><%= post.lugar %></td>
+        <td><%= image_tag post.photo, width:100 unless post.photo.blank?%></td>
         <td><%= post.pago %></td>
         <td><%= post.total %></td>
         <td><%= link_to 'Editar', edit_sendpro_path(post), class:'btn btn-default' %></td>
