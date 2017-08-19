@@ -19,7 +19,7 @@
   <tr>
     <th>Fecha inicial</th>
     <th>Fecha salida</th>
-    <th>Lugar</th>
+    <th>Foto</th>
     <th>Estatus</th>
     <th>Total</th>
     <th colspan="3"></th>
@@ -31,7 +31,7 @@
       <tr>
         <td><%= post.start_time %></td>
         <td><%= post.end_time %></td>
-        <td><%= post.hotel_id %></td>
+        <td><%= image_tag post.photo, width:100 unless post.photo.blank?%></td>
         <td> <%if post.estatus ==1  %>(Reservado)
           <%end%>
           <%if post.estatus ==2  %>(En Uso)
