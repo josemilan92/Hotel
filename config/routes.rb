@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+
+
+  resources :line_items
+  resources :carts
+  resources :products
   resources :estados
   resources :meetings
   resources :pagos
@@ -67,6 +72,10 @@ Rails.application.routes.draw do
   get 'mysend'=> 'sends#mysend'
 
   get 'adminho' => 'events#adminho'
+
+  get 'store'=> 'store#index'
+
+  get 'pdf'=> 'panoramica#pdf'
 
   get 'comentarios/reservacion'
   get 'comentarios/promotion'
