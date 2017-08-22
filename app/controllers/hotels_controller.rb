@@ -38,7 +38,7 @@ class HotelsController < ApplicationController
     @hotel = Hotel.new(hotel_params)
     respond_to do |format|
       if @hotel.save
-        format.html { redirect_to comentarios_hotel_path, notice: 'Hotel was successfully created.' }
+        format.html { redirect_to comentarios_hotel_path, notice: 'Hotel creado con exito' }
         format.json { render :show, status: :created, location: @hotel }
       else
         format.html { render :new }
@@ -52,7 +52,7 @@ class HotelsController < ApplicationController
   def update
     respond_to do |format|
       if @hotel.update(hotel_params)
-        format.html { redirect_to comentarios_hotel_path, notice: 'Hotel was successfully updated.' }
+        format.html { redirect_to comentarios_hotel_path, notice: 'Hotel actualizado con exito.' }
         format.json { render :show, status: :ok, location: @hotel }
       else
         format.html { render :edit }
@@ -66,7 +66,7 @@ class HotelsController < ApplicationController
   def destroy
     @hotel.destroy
     respond_to do |format|
-      format.html { redirect_to comentarios_hotel_url, notice: 'Hotel was successfully destroyed.' }
+      format.html { redirect_to comentarios_hotel_url, notice: 'Hotel eliminado con exito' }
       format.json { head :no_content }
     end
   end

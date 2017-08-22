@@ -65,7 +65,7 @@ class SendsController < ApplicationController
   def update
     respond_to do |format|
       if @send.update(send_params)
-        format.html { redirect_to comentarios_reservacion_path, notice: 'Send was successfully updated.' }
+        format.html { redirect_to comentarios_reservacion_path, notice: 'Reservación creada con exito' }
         format.json { render :show, status: :ok, location: @send }
       else
         format.html { render :edit }
@@ -79,7 +79,7 @@ class SendsController < ApplicationController
   def destroy
     @send.destroy
     respond_to do |format|
-      format.html { redirect_to mysend_url, notice: 'Send was successfully destroyed.' }
+      format.html { redirect_to mysend_url, notice: 'Reservación eliminada con exito' }
       format.json { head :no_content }
     end
   end

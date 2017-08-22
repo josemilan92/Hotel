@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
     @comment.hotel = @hotel
     respond_to do |format|
       if @comment.save
-        format.html{redirect_to @hotel, notice: 'Comment was suceessfully created'}
+        format.html{redirect_to @hotel, notice: 'Comentario creado'}
         format.json{render json: @comment, status: :created, location: @comment.hotel}
       else
         format.html{render action: "new"}

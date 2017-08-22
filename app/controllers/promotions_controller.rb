@@ -37,7 +37,7 @@ class PromotionsController < ApplicationController
 
     respond_to do |format|
       if @promotion.save
-        format.html { redirect_to  comentarios_promotion_path, notice: 'Promotion was successfully created.' }
+        format.html { redirect_to  comentarios_promotion_path, notice: 'Promoción creada con exito' }
         format.json { render :show, status: :created, location: @promotion }
       else
         format.html { render :new }

@@ -50,7 +50,7 @@ class SendprosController < ApplicationController
   def update
     respond_to do |format|
       if @sendpro.update(sendpro_params)
-        format.html { redirect_to @sendpro, notice: 'Sendpro was successfully updated.' }
+        format.html { redirect_to @sendpro, notice: 'Promoción creada con exito.' }
         format.json { render :show, status: :ok, location: @sendpro }
       else
         format.html { render :edit }
