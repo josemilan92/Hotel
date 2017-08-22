@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mapa interactivo</title>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPsNFSWaeIOrnL1JuGtlSAa5lnZR6F14g&callback=initMap"
+            type="text/javascript"></script>
+</head>
+<body class="text-align-justify">
+<div id="mapa"  class="mapas">
+  --ACA VA NUESTRO MAPA--
+</div>
+<style>
+  .mapas {
+    position: relative;
+    padding-bottom: 75%; // This is the aspect ratio
+  height: 0;
+    overflow: hidden;
+  }
+  .mapas iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+</style>
+<script type="text/javascript">
+
+    navigator.geolocation.getCurrentPosition(fn_ok, fn_error);
+    var divMapa=document.getElementById('mapa');
+    // var divMapa=$('#mapa');
+    function fn_error() {
+        divMapa.innerHTML='Hubo un problema solicitando datos';
+    }
+    function fn_ok(respuesta) {
+        // mostrar_objeto(respuesta.coords);
+
+        var lat = respuesta.coords.latitude;
+        var lon = respuesta.coords.longitude;
+
+        var gLatLon= new google.maps.LatLng(lat, lon);
+        var objConfig={
+            zoom: 17,
+            center: gLatLon
+        }
+        var gMapa = new google.maps.Map(divMapa, objConfig);
+        var objCobfigMarker={
+            position: gLatLon,
+            map: gMapa,
+            title: "Usted esta aca"
+        }
+        var gMarker= new google.maps.Marker(objCobfigMarker)
+
+        var gCoder = new google.maps.Geocoder();
+        var objInformacion ={
+            address: 'Carretera Dolores Hidalgo - San Luis de la Paz Km.11, El Rosillo, 37800 Dolores Hidalgo, Gto.'
+        }
+
+        gCoder.geocode(objInformacion, fn_coder);
+
+        function fn_coder(datos) {
+            var coordenadas = datos[0].geometry.location;
+
+            var config={
+                map: gMapa,
+                position: coordenadas,
+                title: 'Tumba'
+            }
+            var gMarkerDV = new google.maps.Marker(config)
+            gMarkerDV.setIcon('')
+
+            var objHTML={
+                content: ''
+            }
+            var gIW = new google.maps.InfoWindow(objHTML);
+            google.maps.event.addListener(gMarkerDV, 'click',
+                function () {
+                    gIW.open(gMapa, gMarkerDV);
+                });
+        }
+        var objConfigDR={
+            map: gMapa,
+            suppressMarkers: true
+        }
+        var objConfigDS= {
+            origin: gLatLon,
+            destination: objInformacion.address,
+            travelMode: google.maps.TravelMode.DRIVING
+        }
+
+        var ds = new google.maps.DirectionsService();
+        var dr = new google.maps.DirectionsRenderer(objConfigDR);
+        //var coordenada = lat+','+lon
+        //divMapa.innerHTML='Tenemos autorizacion para ver su ubicacion';
+        //divMapa.innerHTML = '<img src="http://maps.googleapis.com/maps/api/staticmap?size=512x512&markers='+coordenada+'&markers=color:blue|label:D| Calle Guerrero 7-2, Centro, 37800 Dolores Hidalgo Cuna de la Independencia Nacional, Gto. ">';
+
+        ds.route(objConfigDS, fnRutear);
+        function fnRutear(resultados, status) {
+
+            if (status == 'OK'){
+                dr.setDirections(resultados);
+            }else{
+                alert('Error'+status);
+            }
+        }
+    }
+    //mostrar_objeto(navigator.geolocation)
+    // function mostrar_objeto(obj){
+    //   for(var prop in obj){
+    //     document.write(prop+': '+obj [prop]+'<br/>')
+    //}
+    //}
+</script>
+</body>
+
+</html>

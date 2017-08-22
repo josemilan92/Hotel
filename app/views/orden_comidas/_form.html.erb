@@ -1,0 +1,22 @@
+
+<%= form_for([@hotel,@orden_comida]) do |f| %>
+    <% if @orde_comida.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@orde_comida.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+          <ul>
+            <% @orden_comida.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+  <div class="form-inputs">
+    <%= f.input :product %>
+    <%= f.input :total %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

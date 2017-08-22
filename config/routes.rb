@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
 
 
+  resources :comidas
+  resources :orden_comidas
+  get 'cart/index'
+
   resources :line_items
   resources :carts
   resources :products
@@ -95,6 +99,16 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  get '/cart' => 'cart#index'
+  get '/cart/clear' => 'cart#clearCart'
+  get '/cart/:id' => 'cart#add'
+  get 'vino'=> 'maps#vino'
+
+  get 'cuna'=> 'maps#cuna'
+
+  get 'independencia'=> 'maps#independencia'
+
+  get 'heroes'=> 'maps#heroes'
 
 
 end

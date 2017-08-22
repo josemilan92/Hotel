@@ -1,0 +1,106 @@
+<section id="banner">
+  <%= image_tag "/img/table.jpg" %>
+  <div class="contenedor">
+
+    <p style="color: white">Los mejores Precios</p>
+    <h1  style="color: white;">El refugio</h1>
+
+
+  </div>
+</section>
+<input type="checkbox" id="cerrar">
+<label for="cerrar" id="btn-cerrar"></label>
+<div class="page-header">
+
+  <%= bootstrap_flash %>
+
+  <div class="grid">
+
+    <% @products.each do |product| %>
+
+        </div>
+
+        <div class="jumbotron"  style="background-color: white">
+          <div class="container"  >
+            <div class="col-md-4">
+              <td><%= image_tag product.photo ,:class => 'img-responsive', :style =>'height:200px'%></td>
+            </div>
+            <div class="col-md-4">
+              <div class="page-header">
+                <h2> Nombre:</h2>
+              </div>
+              <h3><%= product.title %></h3>
+
+            </div>
+            <div class="col-md-4">
+              <div class="page-header">
+                <h2> Descripción:</h2>
+              </div>
+              <h3><%= product.description %></h3>
+
+            </div>
+            <div class="col-md-4">
+              <div class="page-header">
+                <h2> Precio:</h2>
+              </div>
+              <h3><%= product.price %></h3>
+
+            </div>
+
+
+
+
+            <div class="col-md-4">
+              <button><a  href="/cart/<%= product.id%>" >Agregar a carrito</a></button>
+            </div>
+
+          </div>
+    <% end %>
+
+    </div>
+
+
+    </div>
+
+
+<br>
+
+</div>
+
+
+
+
+<script type="text/javascript">
+    var elem = document.querySelector('.grid');
+    var msnry = new Masonry( elem, {
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: 200
+    });
+    $(window).load(function(){
+        var elem = document.querySelector('.grid');
+        var msnry = new Masonry( elem, {
+            // options
+            itemSelector: '.grid-item',
+            columnWidth: 200
+        });
+    })
+</script>
+
+<script type="text/javascript">
+    var elem = document.querySelector('.grid');
+    var msnry = new Masonry( elem, {
+        // options
+        itemSelector: '.grid-item',
+        columnWidth: 200
+    });
+    $(window).load(function(){
+        var elem = document.querySelector('.grid');
+        var msnry = new Masonry( elem, {
+            // options
+            itemSelector: '.grid-item',
+            columnWidth: 200
+        });
+    })
+</script>
+

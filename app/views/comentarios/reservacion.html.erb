@@ -32,7 +32,8 @@
         <td><%= post.start_time %></td>
         <td><%= post.end_time %></td>
         <td><%= image_tag post.photo, width:100 unless post.photo.blank?%></td>
-        <td> <%if post.estatus ==1  %>(Reservado)
+        <td>
+          <%if post.estatus ==1  %>(Reservado)
           <%end%>
           <%if post.estatus ==2  %>(En Uso)
           <%end%>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170819223301) do
+ActiveRecord::Schema.define(version: 20170822003409) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(version: 20170819223301) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "texto"
+  end
+
+  create_table "comidas", force: :cascade do |t|
+    t.string "description"
+    t.string "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "cantidad"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -88,6 +96,13 @@ ActiveRecord::Schema.define(version: 20170819223301) do
     t.string "photo"
   end
 
+  create_table "orden_comidas", force: :cascade do |t|
+    t.string "product"
+    t.string "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pagos", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -107,7 +122,9 @@ ActiveRecord::Schema.define(version: 20170819223301) do
     t.string "title"
     t.text "description"
     t.string "photo"
-    t.decimal "price", precision: 8, scale: 2
+    t.integer "price"
+    t.string "category"
+    t.string "subcategory"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

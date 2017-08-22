@@ -39,8 +39,11 @@
   <div class="col-md-3">
     <div class="page-header">
      <%if send.estatus ==1  %>(Reservado)
-      <% else %>
-          (En uso)
+      <%end%>
+          <%if send.estatus ==2  %>(En uso)
+          <% link_to 'Carrito',cart_index_path %>
+      <%end%>
+              <%if send.estatus ==3  %>(Finalizado)
       <%end%>
       </div>
   </div>
@@ -52,6 +55,9 @@
             <% if user_signed_in? %>
                 <%= link_to 'Cancelar', send, :method=> :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn'  %>
             <% end %>
+        <%if send.estatus ==2  %>
+            <% link_to 'Carrito',cart_index_path %>
+        <%end%>
           </div>
 
         </div>
