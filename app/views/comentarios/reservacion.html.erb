@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Reservación de habitación</h1>
+
 <form>
 <label>Buscar por Nombre</label>
 <select name="q" onchange="mostrarValor(this.options[this.selectedIndex].innerHTML);" class="form-control">
@@ -13,6 +13,7 @@
   <%= link_to 'Refrescar', comentarios_reservacion_path, :class=>'btn btn form-control' %>
         </span>
 </form>
+<h1>Reservación de habitación</h1>
 <table class="table table-hover">
 
   <thead>
@@ -41,7 +42,7 @@
           <%end%></td>
 
         <td><%= link_to 'Editar', edit_send_path(post), class:'btn btn-default' %></td>
-        <td><%= link_to 'Eliminar', post, method: :delete, data: { confirm: 'Are you sure?' } , class:'btn btn-default'%></td>
+        <td><%= link_to 'Eliminar', post, method: :delete, data: { confirm: 'Estas seguro?' } , class:'btn btn-default'%></td>
       </tr>
   <% end %>
   </tbody>
@@ -74,7 +75,7 @@
         <td><%= post.pago %></td>
         <td><%= post.total %></td>
         <td><%= link_to 'Editar', edit_sendpro_path(post), class:'btn btn-default' %></td>
-        <td><%= link_to 'Eliminar', post, method: :delete, data: { confirm: 'Are you sure?' } , class:'btn btn-default'%></td>
+        <td><%= link_to 'Eliminar', post, method: :delete, data: { confirm: 'Estas seguro?' } , class:'btn btn-default'%></td>
       </tr>
   <% end %>
   </tbody>

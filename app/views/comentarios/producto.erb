@@ -24,7 +24,7 @@
         <td><%= product.category %></td>
         <td><%= product.subcategory %></td>
         <td><%= link_to 'Editar', edit_product_path(product), :class=>'btn' %></td>
-        <td><%= link_to 'Eliminar', product, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn' %></td>
+        <td><%= link_to 'Eliminar', product, method: :delete, data: { confirm: 'Estas seguro?' }, :class=>'btn' %></td>
       </tr>
 
   <% end %>

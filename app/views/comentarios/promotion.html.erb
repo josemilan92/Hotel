@@ -21,7 +21,7 @@
         <td><%= post.description %></td>
         <td><%= image_tag post.photo, width:100 %></td>
         <td><%= link_to 'Editar', edit_promotion_path(post), class:'btn btn-default' %></td>
-        <td><%= link_to 'Eliminar', post, method: :delete, data: { confirm: 'Are you sure?' } , class:'btn btn-default'%></td>
+        <td><%= link_to 'Eliminar', post, method: :delete, data: { confirm: 'Estas seguro?' } , class:'btn btn-default'%></td>
       </tr>
   <% end %>
   </tbody>
@@ -29,5 +29,5 @@
 <p><%= paginate @promotions %></p>
 <br>
 
-<%= link_to 'Nueva Promocion', new_promotion_path, class:'btn btn-default' %>
+<%= link_to 'Nueva promoción', new_promotion_path, class:'btn btn-default' %>
 

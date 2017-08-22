@@ -21,7 +21,7 @@
         <td><%= post.descripcion %></td>
         <td><%= image_tag post.photo, width:100 %></td>
         <td><%= link_to 'Editar', edit_hotel_path(post), class:'btn btn-default' %></td>
-        <td><%= link_to 'Eliminar', post, method: :delete, data: { confirm: 'Are you sure?' } , class:'btn btn-default'%></td>
+        <td><%= link_to 'Eliminar', post, method: :delete, data: { confirm: 'Estas seguro?' } , class:'btn btn-default'%></td>
       </tr>
   <% end %>
   </tbody>
@@ -29,4 +29,4 @@
 
 <br>
 <p><%= paginate @hotels %></p>
-<%= link_to 'Nueva Habitación', new_hotel_path, class:'btn btn-default' %>
+<%= link_to 'Nueva habitación', new_hotel_path, class:'btn btn-default' %>
