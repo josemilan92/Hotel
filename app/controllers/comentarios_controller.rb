@@ -5,7 +5,15 @@ class ComentariosController < ApplicationController
   layout 'admin'
 
   def index
+    @total_orders = Comida.count
+    @total = Send.where(:status=="reservado").count
 
+  end
+  def ordenes
+    @comidas=Comida.all
+  end
+  def producto
+    @products=Product.all
   end
   def promotion
       @promotions= Promotion.all.page(params[:page]).per(5)

@@ -1,0 +1,50 @@
+
+<%= form_for(@comida) do |f| %>
+    <% if @comida.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@comida.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+          <ul>
+            <% @comida.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="row">
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <% total = 0 %>
+          <% cantidad = 0 %>
+          <% productos = "" %>
+          <% @cart.each do |id, quantity| %>
+              <% product = Product.find_by_id(id) %>
+              <li>
+
+
+                <% link_to product.title, product %>
+                <p><% product.description %></p>
+                <p><% number_to_currency(product.price, :unit => '$')%></p>
+                <p>Quantity <%= quantity %></p>
+              </li>
+              <% total += quantity * product.price %>
+              <%cantidad+= quantity %>
+              <%= productos += product.title %>
+          <% end %>
+        </div>
+      </div>
+      <div class="caption">
+        <p><strong><%= number_to_currency(total, :unit => '$')%></strong></p>
+        <div class="form-inputs">
+          <%= f.hidden_field :description ,value:productos , :placeholder=>productos %>
+          <%= f.hidden_field :cantidad ,value:cantidad, :placeholder=>cantidad %>
+          <%= f.hidden_field :total ,value:total, :placeholder=>total%>
+          <%= f.hidden_field :status ,value:"Pedido"%>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit  "Ordenar"  %>
+    </div>
+<% end %>

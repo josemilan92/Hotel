@@ -1,5 +1,7 @@
 module ApplicationHelper
-
+  def list_statuscomi
+    @comi=Ordenestado.all
+  end
   def list_user
     @users=User.all
   end

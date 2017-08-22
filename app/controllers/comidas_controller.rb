@@ -19,6 +19,7 @@ class ComidasController < InheritedResources::Base
   # POST /hotels.json
   def create
     @comida = Comida.new(comida_params)
+
     respond_to do |format|
       if @comida.save
         session[:cart]= nil

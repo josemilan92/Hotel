@@ -24,28 +24,36 @@
           <%=image_tag(send.photo, :class => 'img-responsive', :style=>'width: 70%') unless send.photo.blank?  %>
         </div>
       </div>
-          <div class="col-md-3">
+          <div class="col-md-2">
             <div class="page-header">
               <h2>Fecha Inicial</h2>
           <%= send.start_time %>
             </div>
           </div>
-      <div class="col-md-3">
+      <div class="col-md-2">
         <div class="page-header">
           <h2>Fecha Salida</h2>
           <%= send.end_time %>
         </div>
       </div>
-  <div class="col-md-3">
+  <div class="col-md-2">
     <div class="page-header">
      <%if send.estatus ==1  %>(Reservado)
       <%end%>
           <%if send.estatus ==2  %>(En uso)
-          <% link_to 'Carrito',cart_index_path %>
+
       <%end%>
               <%if send.estatus ==3  %>(Finalizado)
       <%end%>
       </div>
+  </div>
+
+  <div class="col-md-2">
+    <div class="page-header">
+      <%if send.estatus ==2  %>
+          <button><a href="<%= products_path %>" >Carrito</a></button>
+      <%end%>
+    </div>
   </div>
       <div class="col-md-3">
         <div class="page-header">
@@ -55,9 +63,7 @@
             <% if user_signed_in? %>
                 <%= link_to 'Cancelar', send, :method=> :delete, data: { confirm: 'Estas seguro?' }, :class => 'btn'  %>
             <% end %>
-        <%if send.estatus ==2  %>
-            <% link_to 'Carrito',cart_index_path %>
-        <%end%>
+
           </div>
 
         </div>

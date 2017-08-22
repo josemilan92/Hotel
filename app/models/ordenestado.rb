@@ -1,0 +1,2 @@
+class Ordenestado < ApplicationRecord
+end

@@ -39,11 +39,12 @@
       <%= f.hidden_field :description ,value:productos , :placeholder=>productos %>
       <%= f.hidden_field :cantidad ,value:cantidad, :placeholder=>cantidad %>
       <%= f.hidden_field :total ,value:total, :placeholder=>total%>
+      <%= f.hidden_field :status ,value:"Pedido"%>
     </div>
       </div>
     </div>
 
   <div class="form-actions">
-    <%= f.button :submit  %>
+    <%= f.submit  "Ordenar"  %>
   </div>
 <% end %>

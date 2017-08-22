@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :ordenestados
   resources :comidas
   resources :orden_comidas
   get 'cart/index'
@@ -84,6 +85,8 @@ Rails.application.routes.draw do
   get 'comentarios/reservacion'
   get 'comentarios/promotion'
   get 'comentarios/hotel'
+  get 'comentarios/producto'
+  get 'comentarios/ordenes'
 
   #post 'virtual/panoramica-2_out.swf'
 
@@ -109,6 +112,7 @@ Rails.application.routes.draw do
   get 'independencia'=> 'maps#independencia'
 
   get 'heroes'=> 'maps#heroes'
+
 
 
 end
