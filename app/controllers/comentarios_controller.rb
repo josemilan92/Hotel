@@ -25,9 +25,10 @@ class ComentariosController < ApplicationController
 
   def reservacion
     @q = params[:q]
-    if @q
-      @sends = Send.where(:user_id => @q).page(params[:page]).per(5)
-      @sendpros = Sendpro.where(:user_id => @q).page(params[:page]).per(5)
+    @z = params[:z]
+    if @q || @z
+      @sends = Send.where(:user_id => @q, :estatus => @z).page(params[:page]).per(5)
+      @sendpros = Sendpro.where(:user_id => @q,:status => @z).page(params[:page]).per(5)
     else
       @sends = Send.all.page(params[:page]).per(5)
       @sendpros = Sendpro.all.page(params[:page]).per(5)

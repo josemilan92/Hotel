@@ -5,7 +5,7 @@ class SendsController < ApplicationController
 
   def mysend
     @hotels = Hotel.all
- @send= Send.where(:user_id=>current_user.id)
+ @send= Send.where(:user_id=>current_user.id).page(params[:page]).per(3)
     @sendpros= Sendpro.where(:user_id=>current_user.id)
   end
 

@@ -47,7 +47,7 @@
 
             <div class="field">
     <%= form.label "Tipo de pago" %>
-    <%= form.select :pago,  value: list_price.collect{|c| [c.name, c.id]}%>
+    <%= form.select :pago,  list_price.collect{|c| [c.name, c.id]}%>
   </div>
 
 

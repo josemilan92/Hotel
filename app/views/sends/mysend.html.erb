@@ -14,6 +14,7 @@
 </section>
 
 <p id="notice"><%= notice %></p>
+<p><%= paginate @send %></p>
 <h3>Mis reservaciones</h3>
 
   <% @send.each do |send| %>
@@ -93,8 +94,10 @@
         </div>
 
       </div>
-    </div>
-    </div>
 
 <% end %>
 
+    </div>
+
+
+</div>

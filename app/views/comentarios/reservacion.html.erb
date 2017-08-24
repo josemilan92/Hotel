@@ -8,7 +8,15 @@
       <option name="<%= c.id  %>"  value="<%= c.id %>"><%= c.name  %></option>
   <% end %>
 </select>
-<span class="input-group-btn">
+  <label>Buscar por estatus</label>
+  <select name="z" onchange="mostrarValor(this.options[this.selectedIndex].innerHTML);" class="form-control">
+    <%  list_estado.each do |c|%>
+        <option name="<%= c.id  %>"  value="<%= c.id %>"><%= c.nombre  %></option>
+    <% end %>
+  </select>
+
+
+  <span class="input-group-btn">
         <button type=”submit” class="form-control">Buscar</button>
   <%= link_to 'Refrescar', comentarios_reservacion_path, :class=>'btn btn form-control' %>
         </span>
